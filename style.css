@@ -141,8 +141,7 @@ hr {
     padding-bottom: 70%;   
 }
 
-#Slides .mySlides {
-    display:none;
+.mySlides {
     padding-bottom: 3%;
     padding-left: 25%;
     display: flex;
