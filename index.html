@@ -18,6 +18,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="style.css" type="text/css" rel="stylesheet">
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   
@@ -76,8 +80,7 @@
         <a href = "https://apply.likelion.org"><p>LIKELION 지원하기</p></a>  
       </div>
     </div>
-  </body>
-
+    
   <div id="activity">
     <div class="container">
       <h2><strong>Activity</strong></h2>
@@ -105,61 +108,57 @@
       </div>
     </div>
   </div>
-
+    
   <footer id = "contact">
     <p>Contact   010.2667.5102</p>
   </footer>
+</body>
 
-  <script
-    src="http://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  
-  <script type="text/javascript">
-    function goToScrollById(id) {
-      var scroll_position = $('#' + id).offset().top;
-      
-      $('#' + id + '_link').click(function() {
-        $('html, body').animate({
-          scrollTop: scroll_position
-        }, 'slow')
-      })
-    }
-    
-    $(document).ready(function(){
-      goToScrollById('main')
-      goToScrollById('intro')
-      goToScrollById('apply')
-      goToScrollById('activity')      
+<script type="text/javascript">
+  function goToScrollById(id) {
+    var scroll_position = $('#' + id).offset().top;
+
+    $('#' + id + '_link').click(function() {
+      $('html, body').animate({
+        scrollTop: scroll_position
+      }, 'slow')
     })
+  }
 
-    var slideIndex = 1;
-    showDivs(slideIndex);
+  $(document).ready(function(){
+    goToScrollById('main')
+    goToScrollById('intro')
+    goToScrollById('apply')
+    goToScrollById('activity')      
+  })
 
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
     }
-
-    function currentDiv(n) {
-      showDivs(slideIndex = n);
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-border-red", "");
     }
-
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      if (n > x.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = x.length} ;
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-border-red", "");
-      }
-      x[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " w3-border-red";
-    }
-  </script>
+    x[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " w3-border-red";
+  }
+</script>
 
 </html>
 
