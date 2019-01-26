@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <title>UNIST Likelion</title>
+    
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  
+  <body>
+    <nav class = "navbar navbar-default navbar-fixed-top">
+      <div class = "container">
+        <div class = "navbar-header">
+          <a href = "#" class = "navbar-brand" id = "main_link">UNILION</a>  
+        </div>
+        <ul class = "nav navbar-nav hidden-xs">
+          <li class = "navbar-link" id = "intro_link"><a href = "#">Intro</a></li>
+          <li class = "navbar-link" id = "apply_link"><a href = "#">Apply</a></li>
+          <li class = "navbar-link" id = "activity_link"><a href = "#">Activity</a></li>
+          <li class = "navbar-link" id = "schedule_link"><a href = "#">Schedule</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="main">
+      <div class="col-2" id="main_image">
+        <img src="likelion.JPG" alt="ERROR">
+      </div>
+      <div class="col-md-6 col-xs-6" id="main_contents">
+        <p>Make Your<br> <strong>Ideas</strong> <br>
+          to Real Service
+        </p>
+        <hr class="line">
+        <h4>LIKELION at UNIST</h4>
+      </div>
+    </div>
+    
+    <div id="intro">
+      <div class="container">
+        <h2 style="font-family: 'yun360';"><strong>Intro</strong></h2>
+        <div id="intro_content1">
+          <p class="text-left">
+            <strong id="hack">HACK YOUR LIFE</strong><br>
+            <strong>내 아이디어</strong>를<br>
+            <strong>내 손</strong>으로 실현한다
+          </p>
+        </div>
+        <div id="intro_content2">
+          <p>비전공자들도 프로그래밍 기초 지식을 배워<br> <strong>자신만의 웹서비스</strong>를 만들수 있도록 하는 것이 목표입니다</p>
+        </div>
+        <div id="intro_content3">
+            <img src="contents.JPG" alt="ERROR">
+        </div>
+      </div>
+    </div>
+
+    <div id = "apply">
+      <div class = "col-md-6 col-xs-6" id = "apply1">
+        <p><strong>Apply</strong></p>  
+      </div>
+      <div class = "col-md-6 col-xs-6" id = "apply2">
+        <a href = "https://apply.likelion.org"><p>LIKELION 지원하기</p></a>  
+      </div>
+    </div>
+  </body>
+
+  <div id="activity">
+    <div class="container">
+      <h2><strong>Activity</strong></h2>
+      <div class="w3-content" style="max-width:1000px">
+          <img class="mySlides" src="LIKELION (2).jpg" style="width:100%;">
+          <img class="mySlides" src="hack.jpg" style="width:78%">
+          <img class="mySlides" src="UNISTxlikelion.jpg" style="width:93%">
+        
+         <div class="w3-row-padding w3-section" id="activity_image">
+           <div class="row">
+            <div class="w3-col s4" id="image1">
+              <img class="demo w3-border-red w3-hover-shadow" 
+              src="LIKELION (2).jpg" onclick="currentDiv(1)">
+            </div>
+            <div class="w3-col s4" id="image2">
+                <img class="demo w3-border w3-hover-shadow"
+                src="hack.jpg" onclick="currentDiv(2)">
+            </div>
+            <div class="w3-col s4" id="image3">
+                <img class="demo w3-border w3-hover-shadow" 
+                src="UNISTxlikelion.jpg" onclick="currentDiv(3)">
+            </div>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id = "contact">
+    <p>Contact   010.2667.5102</p>
+  </footer>
+
+  <script type="text/javascript">
+    function goToScrollById(id) {
+      var scroll_position = $('#' + id).offset().top;
+      
+      $('#' + id + '_link').click(function() {
+        $('html, body').animate({
+          scrollTop: scroll_position
+        }, 'slow')
+      })
+    }
+    
+    $(document).ready(function(){
+      goToScrollById('main')
+      goToScrollById('intro')
+      goToScrollById('apply')
+      goToScrollById('activity')      
+    })
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-border-red", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-border-red";
+    }
+  </script>
+
+</html>
+
