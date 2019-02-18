@@ -210,13 +210,13 @@ hr {
     #contact p {
         line-height: 100px;
         margin: 0;
-        font-size: 0.3em;
+        font-size: 0.6em;
         margin-top: 10px;
     }
     #myCarousel h3 {
-        font-size: 0.6em;
+        font-size: 0.8em;
     }
     #myCarousel p {
-        font-size: 0.2em;
+        font-size: 0.4em;
     }
 }
